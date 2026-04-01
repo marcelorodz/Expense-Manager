@@ -1,0 +1,76 @@
+/* CSS3: Custom Properties (Variáveis) */
+:root {
+  --nexus-blue: #003366;
+  --status-red: #d32f2f;
+  --spacing-lg: 24px;
+}
+
+/* CSS3: Grid para o layout principal */
+.dashboardLayout {
+  display: grid;
+  grid-template-columns: 1fr; /* Mobile-first */
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+}
+
+@media (min-width: 768px) {
+  .dashboardLayout {
+    grid-template-columns: 250px 1fr; /* Sidebar e Conteúdo no Desktop */
+  }
+}
+
+/* CSS3: Flexbox para alinhar itens da despesa */
+.expenseRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tableWrapper {
+  overflow-x: auto; /* Garante responsividade em telas pequenas */
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.table th, .table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.title {
+  /* 1. Define uma altura de linha saudável (1.2 a 1.5 é o ideal) */
+  line-height: 1.2; 
+  
+  /* 2. Garante que o texto tenha espaço para respirar */
+  margin: 0 0 1rem 0; 
+  
+  /* 3. Evita que o navegador tente "espremer" o texto */
+  display: block; 
+  
+  /* Ajustes de estilo para ficar profissional */
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff; /* Ou a cor que você preferir */
+}
+
+.subtitle {
+  line-height: 1.5;
+  color: #94a3b8;
+  margin: 0;
+}
+.pending { background-color: #fff3cd; color: #856404; }
+.approved { background-color: #d4edda; color: #155724; }
+.rejected { background-color: #f8d7da; color: #721c24; }
