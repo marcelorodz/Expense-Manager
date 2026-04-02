@@ -1,6 +1,6 @@
-# Nexus Expense Manager
+# Expense Manager
 
-**Nexus Expense Manager** is a high-performance, enterprise-grade UI application built to simulate a global corporate expense management platform. This project serves as a comprehensive study in **UI Engineering**, focusing on scalability, accessibility, and modern frontend architecture.
+**Expense Manager** is a high-performance, enterprise-grade UI application built to simulate a global corporate expense management platform. This project serves as a comprehensive study in **UI Engineering**, focusing on scalability, accessibility, and modern frontend architecture.
 
 ---
 
