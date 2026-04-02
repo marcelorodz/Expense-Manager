@@ -1,73 +1,46 @@
-# React + TypeScript + Vite
+# Nexus Expense Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Nexus Expense Manager** is a high-performance, enterprise-grade UI application built to simulate a global corporate expense management platform. This project serves as a comprehensive study in **UI Engineering**, focusing on scalability, accessibility, and modern frontend architecture.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Key Features & UI Engineering Principles
 
-## React Compiler
+### 1. Robust Type Safety (TypeScript)
+- **Discriminated Unions:** Implemented to handle complex expense lifecycles (Pending, Approved, Rejected), preventing runtime errors by ensuring status-specific properties (like `rejectionReason`) are only accessible when relevant.
+- **Generics:** Utilized for API response structures and utility functions to maintain a DRY (Don't Repeat Yourself) and type-safe codebase.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 2. Performance-First Rendering
+- **Memoization Strategy:** Leveraged `useMemo` for client-side filtering logic to minimize expensive re-computations and maintain a low **INP (Interaction to Next Paint)**.
+- **Optimized Bundle:** Built with **Vite** for fast HMR (Hot Module Replacement) and efficient production builds, ensuring high scores in **Core Web Vitals**.
 
-## Expanding the ESLint configuration
+### 3. Accessibility & Semantics (WCAG 2.1 AA)
+- **Semantic HTML5:** Built using meaningful tags (`<main>`, `<header>`, `<table>`, `<thead>`) to ensure proper document outlines for SEO and Screen Readers.
+- **ARIA Patterns:** Integrated ARIA roles and labels to guide assistive technologies through interactive data grids and dynamic content updates.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 4. Global Internationalization (i18n)
+- **Localization:** Implemented native **Intl API** to handle multi-currency display (BRL, USD, EUR) and locale-aware date formatting, adapting gracefully to global business requirements.
+- **Responsive Layout:** Developed with a **Mobile-First** methodology using **CSS Modules**, **Flexbox**, and **CSS Grid** to ensure cross-browser compatibility and fluid experiences on both desktop and mobile.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🛠️ Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Framework:** React 18+ (Hooks & Functional Components)
+- **Language:** TypeScript (Strict Mode)
+- **Styling:** CSS Modules (Scoped styles & Custom Properties)
+- **Build Tool:** Vite
+- **API Simulation:** Async/Await with Mock Service Layer
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📂 Project Architecture
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```text
+src/
+  ├── @types/      # Global type definitions and Discriminated Unions
+  ├── components/  # Reusable, decoupled UI components
+  ├── hooks/       # Custom hooks for state and performance logic
+  ├── services/    # Data fetching and API integration layer
+  ├── styles/      # Global themes and CSS Module definitions
+  └── utils/       # Localized formatters and helper functions
