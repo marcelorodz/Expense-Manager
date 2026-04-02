@@ -4,7 +4,7 @@
 
 ---
 
-## 🚀 Key Features & UI Engineering Principles
+## Key Features & UI Engineering Principles
 
 ### 1. Robust Type Safety (TypeScript)
 - **Discriminated Unions:** Implemented to handle complex expense lifecycles (Pending, Approved, Rejected), preventing runtime errors by ensuring status-specific properties (like `rejectionReason`) are only accessible when relevant.
@@ -24,7 +24,7 @@
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework:** React 18+ (Hooks & Functional Components)
 - **Language:** TypeScript (Strict Mode)
@@ -34,7 +34,7 @@
 
 ---
 
-## 📂 Project Architecture
+## Project Architecture
 
 ```text
 src/
